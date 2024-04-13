@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+
+	<!-- The root element is called "updates". -->
+	<xs:element name="updates">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- It has a "discovered" child element indicating when the updates were discovered by CPITracker. -->
+				<xs:element name="discovered" type="xs:dateTime"/>
+				<!-- And at least one "update" child element. -->
+				<xs:element name="update" type="updateType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="updateType">
+		<xs:sequence>
+			<!-- The characteristic code is limited to the specific values used in the CPITracker integration flow. -->
+			<xs:element name="characteristic" type="characteristicType"/>
+			<!-- The last three elements can have arbitrary string values, but they must have a value, so we use the non-empty string type. -->
+			<xs:element name="characteristic-readable" type="nonEmptyString"/>
+			<xs:element name="previous-value" type="nonEmptyString"/>
+			<xs:element name="current-value" type="nonEmptyString"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- The below values match the characteristic codes used in the CPITracker integration flow. -->
+	<xs:simpleType name="characteristicType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="xslt.version"/>
+			<xs:enumeration value="xslt.vendor"/>
+			<xs:enumeration value="xslt.product"/>
+			<xs:enumeration value="xslt.product.version"/>
+			<xs:enumeration value="java.version"/>
+			<xs:enumeration value="java.vendor"/>
+			<xs:enumeration value="java.vm.version"/>
+			<xs:enumeration value="java.vm.vendor"/>
+			<xs:enumeration value="camel.version"/>
+			<xs:enumeration value="groovy.version"/>
+			<xs:enumeration value="sap-cloud-integration.version"/>
+			<xs:enumeration value="sap-cloud-integration.runtime.version"/>
+			<xs:enumeration value="javascript.engine.version"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Simple type for a string that cannot be empty. -->
+	<xs:simpleType name="nonEmptyString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

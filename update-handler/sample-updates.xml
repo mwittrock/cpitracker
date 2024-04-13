@@ -1,0 +1,21 @@
+<updates>
+  <discovered>2024-04-08T17:00:01.179Z</discovered>
+  <update>
+    <characteristic>sap-cloud-integration.runtime.version</characteristic>
+    <characteristic-readable>The SAP Cloud Integration runtime version number</characteristic-readable>
+    <previous-value>6.50.10</previous-value>
+    <current-value>6.51.11</current-value>
+  </update>
+  <update>
+    <characteristic>java.vm.version</characteristic>
+    <characteristic-readable>The Java Virtual Machine version</characteristic-readable>
+    <previous-value>8.1.097 11.0.22+000</previous-value>
+    <current-value>8.1.098 11.0.22+000</current-value>
+  </update>
+  <update>
+    <characteristic>camel.version</characteristic>
+    <characteristic-readable>The Apache Camel version</characteristic-readable>
+    <previous-value>2.24.2-sap-32</previous-value>
+    <current-value>2.24.2-sap-33</current-value>
+  </update>
+</updates>
