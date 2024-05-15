@@ -39,7 +39,7 @@
 			<xs:enumeration value="groovy.version"/>
 			<xs:enumeration value="sap-cloud-integration.version"/>
 			<xs:enumeration value="sap-cloud-integration.runtime.version"/>
-			<xs:enumeration value="javascript.engine.version"/>
+			<xs:enumeration value="javascript.engine"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
