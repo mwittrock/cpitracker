@@ -37,6 +37,7 @@
 			<xs:enumeration value="java.vm.vendor"/>
 			<xs:enumeration value="camel.version"/>
 			<xs:enumeration value="groovy.version"/>
+			<xs:enumeration value="groovy.version.v2x"/>
 			<xs:enumeration value="sap-cloud-integration.version"/>
 			<xs:enumeration value="sap-cloud-integration.runtime.version"/>
 			<xs:enumeration value="javascript.engine"/>
